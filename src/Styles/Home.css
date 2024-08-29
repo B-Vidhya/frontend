@@ -1,0 +1,85 @@
+/* Home Page Styles */
+
+.home-container {
+    background-color: #f8f9fa;
+    padding: 0;
+  }
+  
+  .header-section {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .dashboard-section {
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    background-color: #e9ecef;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .dashboard-card h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  .votes-tally-section {
+    padding: 20px;
+  }
+  
+  .votes-card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .votes-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .candidate-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .bar {
+    background-color: #dee2e6;
+    border-radius: 5px;
+    flex: 1;
+    height: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .bar .filled {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  
