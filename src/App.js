@@ -16,7 +16,10 @@ function App() {
       <div className="App">
         <Routes>
           {/* Common Routes */}
-          <Route path="/" element={<SignUpPage />} />
+          <Route path="/" element={<Home />} />
+
+          {/* SignUpPage Routes */}
+          <Route path="/signup" element={<SignUpPage />} />
           
           {/* Student and Admin Home Pages */}
           <Route path="/home" element={<Home userType="student" />} />

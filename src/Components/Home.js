@@ -1,178 +1,132 @@
-// import React from 'react';
-// import '../Styles/styles1.css';
-// import AdminViewCandidates from './AdminViewCandidates';
-// import EventsList from './EventsList';
-
-// const Home = ({ userType }) => {
-//   return (
-//     <div className="home-container">
-//       <h1>Dashboard</h1>
-//       <div className="dashboard-cards">
-//         <div className="card">
-//           <h3>4</h3>
-//           <p>No. of Positions</p>
-//         </div>
-//         <div className="card">
-//           <h3>9</h3>
-//           <p>No. of Candidates</p>
-//         </div>
-//         <div className="card">
-//           <h3>4</h3>
-//           <p>Total Voters</p>
-//         </div>
-//         <div className="card">
-//           <h3>3</h3>
-//           <p>Voters Voted</p>
-//         </div>
-//       </div>
-//       <div className="events-list">
-//         {userType === 'admin' ? <AdminViewCandidates /> : <EventsList />}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../Styles/Home.css'; // Import the CSS file
+import React from "react";
+import { Carousel } from "react-bootstrap";
+import FirstImage from "../Images/first.svg"; // Image for nomination phase
+import SecondImage from "../Images/second.svg"; // Image for voting phase
+import ThirdImage from "../Images/third.svg"; // Image for team collaboration
+import Logo from "../Images/AV.jpg";
+import "../Styles/Home.css";
 
 const Home = () => {
   return (
-    <Container fluid className="home-container">
+    <div className="home-container">
       {/* Header Section */}
-      <Row className="header-section p-3">
-        <Col>
-          <h1 className="text-white">Online Voting System</h1>
-        </Col>
-        <Col className="text-right">
-          <div className="user-info">
-            {/* Admin/User Info Image */}
-            <img src="#" alt="User" className="user-image" /> {/* Replace # with actual path */}
-            <span className="text-white ml-2">CRCE Admin</span>
-          </div>
-        </Col>
-      </Row>
+      <header className="header">
+        <div className="logo-section">
+          <img src={Logo} alt="Website Logo" className="logo" />
+          <h1 className="site-title">AspireVote</h1>
+        </div>
+        <nav>
+          <a href="/signup" className="login-button">Login</a>
+        </nav>
+      </header>
 
-      {/* Dashboard Section */}
-      <Row className="dashboard-section">
-        {/* Card for Number of Positions */}
-        <Col md={3}>
-          <Card className="dashboard-card shadow-sm">
-            <Card.Body>
-              <Card.Title>No. of Positions</Card.Title>
-              <Card.Text>
-                <h2>4</h2>
-              </Card.Text>
-              <Link to="#" className="stretched-link">More info</Link> {/* Update link */}
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Card for Number of Candidates */}
-        <Col md={3}>
-          <Card className="dashboard-card shadow-sm">
-            <Card.Body>
-              <Card.Title>No. of Candidates</Card.Title>
-              <Card.Text>
-                <h2>9</h2>
-              </Card.Text>
-              <Link to="#" className="stretched-link">More info</Link> {/* Update link */}
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Card for Total Voters */}
-        <Col md={3}>
-          <Card className="dashboard-card shadow-sm">
-            <Card.Body>
-              <Card.Title>Total Voters</Card.Title>
-              <Card.Text>
-                <h2>4</h2>
-              </Card.Text>
-              <Link to="#" className="stretched-link">More info</Link> {/* Update link */}
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Card for Voters Voted */}
-        <Col md={3}>
-          <Card className="dashboard-card shadow-sm">
-            <Card.Body>
-              <Card.Title>Voters Voted</Card.Title>
-              <Card.Text>
-                <h2>3</h2>
-              </Card.Text>
-              <Link to="#" className="stretched-link">More info</Link> {/* Update link */}
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      {/* Votes Tally Section */}
-      <Row className="votes-tally-section mt-5">
-        <Col md={6}>
-          <Card className="votes-card shadow-sm">
-            <Card.Header>President</Card.Header>
-            <Card.Body>
-              <div className="votes-bar">
-                {/* Add Candidate 1 Image */}
-                <img src="#" alt="Candidate 1" className="candidate-image" /> {/* Replace # with actual path */}
-                <span>Candida</span>
-                <div className="bar">
-                  <div className="filled" style={{ width: '70%' }}></div>
-                </div>
+      {/* Slider Section */}
+      <div className="hero">
+        <Carousel>
+          <Carousel.Item>
+            <div className="carousel-content">
+              <div className="carousel-text">
+                <h3>Candidates Nomination</h3>
+                <p>Nominate yourself for various leadership roles in upcoming campus events and lead your community to success.</p>
               </div>
-              <div className="votes-bar">
-                {/* Add Candidate 2 Image */}
-                <img src="#" alt="Candidate 2" className="candidate-image" /> {/* Replace # with actual path */}
-                <span>Monica</span>
-                <div className="bar">
-                  <div className="filled" style={{ width: '30%' }}></div>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
+              <img
+                className="carousel-image"
+                src={FirstImage}
+                alt="First slide"
+              />
+            </div>
+          </Carousel.Item>
 
-        <Col md={6}>
-          <Card className="votes-card shadow-sm">
-            <Card.Header>Vice President</Card.Header>
-            <Card.Body>
-              <div className="votes-bar">
-                {/* Add Candidate 1 Image */}
-                <img src="#" alt="Candidate 1" className="candidate-image" /> {/* Replace # with actual path */}
-                <span>Calista</span>
-                <div className="bar">
-                  <div className="filled" style={{ width: '20%' }}></div>
-                </div>
+          <Carousel.Item>
+            <div className="carousel-content">
+              <div className="carousel-text">
+                <h3>Voting Process</h3>
+                <p>Select and vote for the best candidates who can bring positive change and innovation to your campus.</p>
               </div>
-              <div className="votes-bar">
-                {/* Add Candidate 2 Image */}
-                <img src="#" alt="Candidate 2" className="candidate-image" /> {/* Replace # with actual path */}
-                <span>Gini</span>
-                <div className="bar">
-                  <div className="filled" style={{ width: '50%' }}></div>
-                </div>
-              </div>
-              <div className="votes-bar">
-                {/* Add Candidate 3 Image */}
-                <img src="#" alt="Candidate 3" className="candidate-image" /> {/* Replace # with actual path */}
-                <span>Sheldon</span>
-                <div className="bar">
-                  <div className="filled" style={{ width: '30%' }}></div>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+              <img
+                className="carousel-image"
+                src={SecondImage}
+                alt="Second slide"
+              />
+            </div>
+          </Carousel.Item>
 
-      {/* Add more roles and positions as needed */}
-    </Container>
+          <Carousel.Item>
+            <div className="carousel-content">
+              <div className="carousel-text">
+                <h3>Team Collaboration</h3>
+                <p>Support your chosen leaders in fostering teamwork and bringing your campus community together.</p>
+              </div>
+              <img
+                className="carousel-image"
+                src={ThirdImage}
+                alt="Third slide"
+              />
+            </div>
+          </Carousel.Item>
+        </Carousel>
+      </div>
+
+      {/* Description Section */}
+      <div className="content-section">
+        <h2>Welcome to the Campus Voting Portal!</h2>
+        <p>
+          Our platform is designed to facilitate seamless and transparent elections for various campus events and positions. This website enables students to actively participate in the nomination and voting process for key leadership roles in upcoming science, tech, and cultural fests. We aim to ensure fair elections, empowering students to choose representatives who will lead these events successfully.
+        </p>
+        <h3>How It Works</h3>
+        <h4>Nomination Phase:</h4>
+        <p>
+          Students who are passionate about taking on leadership roles can nominate themselves for various positions such as Convenor, Co-Convenor, Treasurer, Designer, President, Vice President, and more. Simply log in, browse the list of active events, and complete the registration form with your details, such as your picture, the role you're applying for, your CGPA, attendance, and a brief statement on why you believe you are suitable for the position. Your nomination will be reviewed by the admin team, and candidates who meet the criteria will be eligible for the voting phase.
+        </p>
+        <h4>Voting Phase:</h4>
+        <p>
+          After the nomination phase, all students will be able to vote for their preferred candidates. You can explore each candidate's profile, which includes their goals and qualifications, and make an informed decision. After casting your vote for a particular role, your voting for that role will be locked to ensure fairness and transparency.
+        </p>
+        <h4>Result Declaration:</h4>
+        <p>
+          After the voting phase concludes, the admin will analyze the results and declare the winners for each position. The results will be available for everyone to view, ensuring an open and fair process.
+        </p>
+        <h4>Key Features:</h4>
+        <p>
+          User-Friendly Interface: Easy navigation through events, roles, and candidate details. <br />
+          Secure Voting System: Every vote is unique and securely processed to prevent any misuse. <br />
+          Real-Time Updates: Stay informed with real-time updates on events, candidates, and voting status.
+        </p>
+        <p>Whether you are a student eager to lead or a voter excited to choose the best candidates, this platform ensures that your voice is heard and valued. Together, let's build a stronger, more engaged campus community!</p>
+      </div>
+
+      {/* FAQ Section */}
+      <section className="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-item">
+          <h4>How do I nominate myself for a position?</h4>
+          <p>Log in to the platform, browse the active events, and fill out the nomination form with your details and the position you are interested in. Your application will be reviewed by the admin team.</p>
+        </div>
+        <div className="faq-item">
+          <h4>When can I vote?</h4>
+          <p>Voting will begin after the nomination phase is complete. You will be notified of the voting period through the platform, and you can vote for your preferred candidates during this time.</p>
+        </div>
+        <div className="faq-item">
+          <h4>Can I vote for multiple candidates in the same role?</h4>
+          <p>No, once you cast your vote for a particular role, your voting for that role will be locked to ensure fairness and transparency.</p>
+        </div>
+        <div className="faq-item">
+          <h4>How are the results announced?</h4>
+          <p>After the voting phase concludes, the results will be analyzed by the admin team and declared on the platform. You can view the results to see who won the respective positions.</p>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-content">
+          <h4>Contact Us</h4>
+          <p>Email: campusvoting@university.com</p>
+          <p>Phone: +123 456 7890</p>
+          <p>Address: 123 University Ave, City, Country</p>
+          <p>Follow us on social media for updates and news!</p>
+        </div>
+      </footer>
+    </div>
   );
 };
 
